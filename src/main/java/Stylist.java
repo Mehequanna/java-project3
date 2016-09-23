@@ -64,6 +64,16 @@ public class Stylist {
     }
   }
 
+  public static Stylist getStylistName(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT name FROM stylists WHERE id=:id";
+      Stylist name = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeScalar(Stylist.class);
+      return name;
+    }
+  }
+
   public static List<Stylist> all() {
     String sql = "SELECT id, name, details FROM stylists";
     try(Connection con = DB.sql2o.open()) {

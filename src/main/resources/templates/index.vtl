@@ -1,0 +1,112 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h2 class="panel-title">Stylists</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Edit?</th>
+        <th>Delete?</th>
+      </thead>
+      <tbody>
+        #foreach ($stylist in $stylists)
+          <tr>
+            <td>$stylist.getName()</td>
+            <td>$stylist.getDetails()</td>
+            <td><a href="#">Edit</a></td>
+            <td><a href="#">Delete</a></td>
+          </tr>
+        #end
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <a data-toggle="collapse" href="#add-stylist">Add a Stylist</a>
+      </h2>
+    </div>
+    <div class="form panel-collapse collapse" id="add-stylist">
+      <div class="panel-body">
+        <div class="form">
+          <form action="/stylist/new" method="post">
+            <div class="form-group">
+              <label for="name">Stylist Name:</label>
+              <input id="name" name="name" type="text" class="form-control" required>
+              <label for="details">Stylist Details:</label>
+              <textarea id="details" name="details" type="text" class="form-control" required></textarea>
+            </div>
+            <button class="btn btn-info" type="submit">Add New Stylist</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h2 class="panel-title">Clients</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Stylist</th>
+        <th>Edit?</th>
+        <th>Delete?</th>
+      </thead>
+      <tbody>
+        #foreach ($client in $clients)
+          <tr>
+            <td>$client.getName()</td>
+            <td>$client.getDetails()</td>
+            <td>Work out</td>
+            <td><a href="#">Edit</a></td>
+            <td><a href="movies/$movie.getId()/delete">Delete</a></td>
+          </tr>
+        #end
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <a data-toggle="collapse" href="#add-client">Add a Client</a>
+      </h2>
+    </div>
+    <div class="form panel-collapse collapse" id="add-client">
+      <div class="panel-body">
+        <div class="form">
+          <form action="/client/new" method="post">
+            <div class="form-group">
+              <label for="name">Client Name:</label>
+              <input id="name" name="name" type="text" class="form-control" required>
+              <label for="details">Client Details:</label>
+              <textarea id="details" name="details" type="text" class="form-control" required></textarea>
+
+              <div class="form-group">
+                <label for="stylist_id">Stylist:</label>
+                <select id="stylist_id" name="stylist_id" type="text" class="form-control">
+                  #foreach ($stylist in $stylists)
+                    <option value="$stylist.getId()">$stylist.getName()</option>
+                  #end
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-success" type="submit">Add New Client</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
