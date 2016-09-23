@@ -41,5 +41,23 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/stylist/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int stylist_id = Integer.parseInt(request.queryParams("stylist_id"));
+      Stylist stylist = Stylist.find(stylist_id);
+      stylist.delete();
+      response.redirect("/");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/client/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int client_id = Integer.parseInt(request.queryParams("client_id"));
+      Client client = Client.find(client_id);
+      client.delete();
+      response.redirect("/");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 }

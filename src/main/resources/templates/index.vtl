@@ -16,7 +16,12 @@
             <td>$stylist.getName()</td>
             <td>$stylist.getDetails()</td>
             <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
+            <td>
+              <form action="/stylist/delete" method="post">
+                <input id="stylist_id" name="stylist_id" value="$stylist.getId()" hidden>
+                <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
+            </td>
           </tr>
         #end
       </tbody>
@@ -69,7 +74,12 @@
             <td>$client.getDetails()</td>
             <td>Work out</td>
             <td><a href="#">Edit</a></td>
-            <td><a href="movies/$movie.getId()/delete">Delete</a></td>
+            <td>
+              <form action="/client/delete" method="post">
+                <input id="client_id" name="client_id" value="$client.getId()" hidden>
+                <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
+            </td>
           </tr>
         #end
       </tbody>
