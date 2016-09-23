@@ -15,7 +15,7 @@
           <tr>
             <td>$stylist.getName()</td>
             <td>$stylist.getDetails()</td>
-            <td><a href="#">Edit</a></td>
+            <td><a href="/stylists/$stylist.getId()/edit" class="btn btn-warning">Edit</a></td>
             <td>
               <form action="/stylist/delete" method="post">
                 <input id="stylist_id" name="stylist_id" value="$stylist.getId()" hidden>
@@ -73,7 +73,7 @@
             <td>$client.getName()</td>
             <td>$client.getDetails()</td>
             <td>Work out</td>
-            <td><a href="#">Edit</a></td>
+            <td><a href="/clients/$client.getId()/edit" class="btn btn-warning">Edit</a></td>
             <td>
               <form action="/client/delete" method="post">
                 <input id="client_id" name="client_id" value="$client.getId()" hidden>

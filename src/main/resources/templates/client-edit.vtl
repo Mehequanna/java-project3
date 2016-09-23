@@ -1,0 +1,27 @@
+<div class="form">
+  <form action="/client/edit" method="post">
+    <input type="text" hidden value="$client.getId()" id="client_id" name="client_id">
+    <div class="form-group">
+      <label for="name">Client Name:</label>
+      <input id="name" name="name" type="text" class="form-control" required value="$client.getName()">
+
+      <label for="details">Client Details:</label>
+      <textarea id="details" name="details" type="text" class="form-control" required>$client.getDetail()</textarea>
+
+      <div class="form-group">
+        <label for="stylist_id">Stylist:</label>
+        <select id="stylist_id" name="stylist_id" type="text" class="form-control">
+          #foreach ($stylist in $stylists)
+            #if($client.getStudio()== $stylist.getId())
+              <option value="$stylist.getId()" selected>$stylist.getName()</option>
+            #else
+              <option value="$stylist.getId()">$stylist.getName()</option>
+            #end
+          #end
+        </select>
+      </div>
+
+    </div>
+    <button class="btn btn-danger" type="submit">Edit movie</button>
+  </form>
+</div>

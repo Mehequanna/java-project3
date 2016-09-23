@@ -52,6 +52,13 @@ public class Stylist {
         .addParameter("id", id)
         .executeUpdate();
     }
+
+    try(Connection con = DB.sql2o.open()) {
+      String sql2 = "UPDATE clients SET stylist_id = 1 WHERE stylist_id = :id;";
+      con.createQuery(sql2)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
   }
 
   public static Stylist find(int id) {
