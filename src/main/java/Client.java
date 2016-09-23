@@ -36,6 +36,7 @@ public class Client {
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", name)
         .addParameter("details", details)
+        .addParameter("stylist_id", stylist_id)
         .executeUpdate()
         .getKey();
     }
