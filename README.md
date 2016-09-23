@@ -14,7 +14,7 @@ To use the code, you can clone the repository at: [https://github.com/mehequanna
 * $ gradle run
 * Go to localhost:4567 in your browser
 
-##Database Instructions (postgrest/psql)
+##Database Instructions (postgres/psql)
 * CREATE DATABASE hair_salon; (Run in psql)
 * psql hair_salon < hairsalon.sql (Run in terminal)
 * \c hair_salon (Run the rest in psql)
