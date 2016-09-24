@@ -98,5 +98,15 @@ public class App {
       response.redirect("/");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/stylist/:stylist_id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int stylist_id = Integer.parseInt(request.params(":stylist_id"));
+      Stylist stylist = Stylist.find(stylist_id);
+      model.put("stylist", stylist);
+      model.put("clients", Client.findByStylist(stylist_id));
+      model.put("template", "templates/stylist.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }

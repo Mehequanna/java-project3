@@ -5,15 +5,15 @@
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
-        <th>Name</th>
-        <th>Details</th>
-        <th>Edit?</th>
-        <th>Delete?</th>
+        <th class="col-xs-1">Name</th>
+        <th class="col-xs-6">Details</th>
+        <th class="col-xs-1">Edit?</th>
+        <th class="col-xs-1">Delete?</th>
       </thead>
       <tbody>
         #foreach ($stylist in $stylists)
           <tr>
-            <td>$stylist.getName()</td>
+            <td><a href="/stylist/$stylist.getId()">$stylist.getName()</a></td>
             <td>$stylist.getDetails()</td>
             <td><a href="/stylists/$stylist.getId()/edit" class="btn btn-warning">Edit</a></td>
             <td>
@@ -61,11 +61,11 @@
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
-        <th>Name</th>
-        <th>Details</th>
-        <th>Stylist</th>
-        <th>Edit?</th>
-        <th>Delete?</th>
+        <th class="col-xs-1">Name</th>
+        <th class="col-xs-1">Details</th>
+        <th class="col-xs-5">Stylist</th>
+        <th class="col-xs-1">Edit?</th>
+        <th class="col-xs-1">Delete?</th>
       </thead>
       <tbody>
         #foreach ($client in $clients)

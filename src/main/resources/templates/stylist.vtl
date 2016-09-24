@@ -1,0 +1,22 @@
+<h1 class="text-center">$stylist.getName()</h1>
+
+<h3>Clients</h3>
+#if ($stylist.size() == 0)
+  <p>This stylist has no clients</p>
+#else
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Detials</th>
+    </thead>
+    <tbody>
+      #foreach ($client in $clients)
+        <tr>
+          <td>$client.getName()</td>
+          <td>$client.getDetails()</td>
+          <td><a href="/clients/$client.getId()/edit" class="btn btn-warning">Edit</a></td>
+        </tr>
+      #end
+    </tbody>
+  </table>
+#end
