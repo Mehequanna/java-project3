@@ -1,10 +1,10 @@
 <div class="form">
   <form action="/stylist/edit" method="post">
     <input type="text" hidden value="$stylist.getId()" id="stylist_id" name="stylist_id">
-    <div class="form-group">
-      <label for="name">Stylist Name:</label>
-      <input id="name" name="name" type="text" class="form-control" required value="$stylist.getName()">
 
+    <h2>$stylist.getName()</h2>
+
+    <div class="form-group">
       <label for="details">Stylist Details:</label>
       <textarea id="details" name="details" type="text" class="form-control" required>$stylist.getDetails()</textarea>
     </div>
