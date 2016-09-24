@@ -4,3 +4,8 @@ header {
   background-color: black;
   color: white;
 }
+
+#home-button {
+  text-decoration: none;
+  color: white;
+}
