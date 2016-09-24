@@ -16,7 +16,7 @@ To use the code, you can clone the repository at: [https://github.com/mehequanna
 
 ##Database Instructions (postgres/psql)
 * CREATE DATABASE hair_salon; (Run in psql)
-* psql hair_salon < hairsalon.sql (Run in terminal)
+* psql hair_salon < hair_salon.sql (Run in terminal)
 * \c hair_salon (Run the rest in psql)
 * Finally check for tables by running: \dt
 
