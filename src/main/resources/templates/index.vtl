@@ -15,13 +15,18 @@
           <tr>
             <td><a href="/stylist/$stylist.getId()">$stylist.getName()</a></td>
             <td>$stylist.getDetails()</td>
-            <td><a href="/stylists/$stylist.getId()/edit" class="btn btn-warning">Edit</a></td>
-            <td>
-              <form action="/stylist/delete" method="post">
-                <input id="stylist_id" name="stylist_id" value="$stylist.getId()" hidden>
-                <button class="btn btn-danger" type="submit">Delete</button>
-              </form>
-            </td>
+            #if (!$stylist.getName().equals("Default Stylist"))
+              <td><a href="/stylists/$stylist.getId()/edit" class="btn btn-warning">Edit</a></td>
+              <td>
+                <form action="/stylist/delete" method="post">
+                  <input id="stylist_id" name="stylist_id" value="$stylist.getId()" hidden>
+                  <button class="btn btn-danger" type="submit" name="submit" value="A" onclick="return confirm('Do you really want to delete this stylist?');return false;" />Delete</button>
+                </form>
+              </td>
+            #else
+              <td></td>
+              <td></td>
+            #end
           </tr>
         #end
       </tbody>
@@ -62,8 +67,7 @@
     <table class="table table-striped">
       <thead>
         <th class="col-xs-1">Name</th>
-        <th class="col-xs-1">Details</th>
-        <th class="col-xs-5">Stylist</th>
+        <th class="col-xs-5">Details</th>
         <th class="col-xs-1">Edit?</th>
         <th class="col-xs-1">Delete?</th>
       </thead>
@@ -72,7 +76,6 @@
           <tr>
             <td>$client.getName()</td>
             <td>$client.getDetails()</td>
-            <td>Work out</td>
             <td><a href="/clients/$client.getId()/edit" class="btn btn-warning">Edit</a></td>
             <td>
               <form action="/client/delete" method="post">
