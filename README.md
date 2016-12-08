@@ -13,7 +13,7 @@ Java, JUnit, Gradle, Spark
 * Run in terminal: postgres
 * Run in new terminal window: psql
 * Run in psql: CREATE DATABASE hair_salon;
-* Run in terminal inside project directory: hair_salon < hair_salon.sql
+* Run in terminal inside project directory: psql hair_salon < hair_salon.sql
 * Run in psql: \c hair_salon
 * Finally check for tables in psql by running: \dt
 
