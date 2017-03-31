@@ -16,7 +16,7 @@ To use the code, you can clone the repository at: [https://github.com/mehequanna
 * $ gradle run
 * Go to localhost:4567 in your browser
 
-###Database Instructions (postgres/psql)
+## Database Instructions (postgres/psql)
 * Run in terminal: postgres
 * Run in new terminal window: psql
 * Run in psql: CREATE DATABASE hair_salon;
@@ -27,6 +27,6 @@ To use the code, you can clone the repository at: [https://github.com/mehequanna
 ## Author
 Stephen Emery
 
-##License
+## License
 This work can be used under the MIT License.
 Copyright (c) 2016 Stephen Emery
