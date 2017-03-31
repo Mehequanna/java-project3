@@ -6,7 +6,7 @@ This app will allow an owner or employee to add stylists and clients. They will 
 
 ![screenshot of project](hairsalon.png)
 
-##Technologies
+## Technologies
 Java, JUnit, Gradle, Spark
 
 ## Usage
